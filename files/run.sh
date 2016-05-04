@@ -1,18 +1,21 @@
 #!/bin/sh
 
-[ -f /run-pre.sh ] && /run-pre.sh
-
-if [ ! -d /DATA/htdocs ] ; then
-  mkdir -p /DATA/htdocs
-  chown nginx:www-data /DATA/htdocs
+if [ -f /scripts/pre-run.sh ]; then
+	chmod 700 /scripts/pre-run.sh
+	/scripts/pre-run.sh || exit $?
 fi
 
+if [ ! -d /www ] ; then
+	mkdir -p /www
+fi
+chown -R nginx:www-data /www
+
 # start php-fpm
-mkdir -p /DATA/logs/php-fpm
 php-fpm
 
 # start nginx
-mkdir -p /DATA/logs/nginx
-mkdir -p /tmp/nginx
-chown nginx /tmp/nginx
+if [ ! -d /tmp/nginx ] ; then
+	mkdir -p /tmp/nginx
+fi
+chown -R nginx /tmp/nginx
 nginx
