@@ -11,6 +11,7 @@ RUN apk --update add \
     php-json \
     php-xml \
     php-phar \
+    php-intl \
     php-openssl && \
     rm -rf /var/cache/apk/*
 
