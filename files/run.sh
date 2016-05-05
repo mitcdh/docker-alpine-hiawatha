@@ -10,4 +10,5 @@ if [ ! -d /www ] ; then
 fi
 chown -R php-srv:www-data /www
 
-php-fpm
+/usr/bin/php-fpm
+/usr/bin/hiawatha -d
