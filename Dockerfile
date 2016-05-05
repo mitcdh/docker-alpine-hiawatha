@@ -26,10 +26,6 @@ ADD files/php-fpm.conf /etc/php/
 ADD files/run.sh /scripts/run.sh
 RUN chmod -R 700 /scripts/
 
-# Setup Directories
-RUN mkdir /www
-RUN chown php-srv:www-data /www
-
 EXPOSE 9000
 
 CMD ["/scripts/run.sh"]
