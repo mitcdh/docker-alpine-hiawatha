@@ -8,14 +8,6 @@ fi
 if [ ! -d /www ] ; then
 	mkdir -p /www
 fi
-chown -R nginx:www-data /www
+chown -R php-srv:www-data /www
 
-# start php-fpm
 php-fpm
-
-# start nginx
-if [ ! -d /tmp/nginx ] ; then
-	mkdir -p /tmp/nginx
-fi
-chown -R nginx /tmp/nginx
-nginx

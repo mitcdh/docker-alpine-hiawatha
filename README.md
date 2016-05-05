@@ -1,7 +1,16 @@
-# Alpine, PHP-FPM, Nginx and Composer Docker Image
+# Dockerised Alpine, PHP-FPM, and Composer
 
-Lightwight Docker base image for a composer with preconfigured PHP-FPM and Nginx based on [AlpineLinux](http://alpinelinux.org)
+Docker base image for PHP-FPM (with composer preinstalled) based on [AlpineLinux](http://alpinelinux.org).
+
+Intended for use behind a [reverse proxy](https://github.com/jwilder/nginx-proxy) of some sort.
+
+### Usage
+````bash
+docker pull mitcdh/fpm-composer
+````
 
 ### Structure
+* `/www`: Web root
 
-* `/www`: Webroot
+### Exposed Ports
+* `9000`: php-fpm web server
