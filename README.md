@@ -13,4 +13,4 @@ docker pull mitcdh/fpm-composer
 * `/www`: Web root
 
 ### Exposed Ports
-* `9000`: php-fpm web server
+* `80`: http web server

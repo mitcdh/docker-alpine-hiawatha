@@ -12,7 +12,7 @@ RUN apk --update add \
     ca-certificates \
     curl \
     git && \
-    apk add haiwatha  --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
+    apk add hiawatha  --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
     rm -rf /var/cache/apk/*
 
 # Install composer
