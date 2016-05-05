@@ -24,8 +24,8 @@ RUN addgroup -S www-data && \
     adduser -S -G www-data -g "Web Server" -h "/var/lib/www" web-srv
 
 # Add configuration
-ADD files/hiawatha.conf /etc/php/hiawatha.conf
-ADD files/php-fpm.conf /etc/php/
+ADD files/hiawatha.conf /etc/hiawatha/hiawatha.conf
+ADD files/php-fpm.conf /etc/php/php-fpm.conf
 ADD files/run.sh /scripts/run.sh
 RUN chmod -R 700 /scripts/
 
