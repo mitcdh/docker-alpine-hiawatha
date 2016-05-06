@@ -12,6 +12,7 @@ RUN addgroup -S www-data && \
 ADD files/hiawatha.conf /etc/hiawatha/hiawatha.conf
 ADD files/run.sh /scripts/run.sh
 RUN chmod -R 700 /scripts/
+RUN mkdir /etc/hiawatha/conf.d
 
 EXPOSE 80
 

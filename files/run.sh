@@ -8,7 +8,6 @@ fi
 if [ ! -d /www ] ; then
 	mkdir -p /www
 fi
-chown -R php-srv:www-data /www
+chown -R web-srv:www-data /www
 
-php-fpm
 hiawatha -d
