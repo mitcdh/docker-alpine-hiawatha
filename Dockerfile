@@ -1,7 +1,13 @@
 FROM alpine:latest
 MAINTAINER Mitchell Hewes <me@mitcdh.com>
 
-RUN apk add hiawatha  --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
+RUN apk add --update \
+    mbedtls \
+    musl \
+    libxslt \
+    zlib \
+    libxml2  && \
+    apk add hiawatha  --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
     rm -rf /var/cache/apk/*
 
 # Add user and group
