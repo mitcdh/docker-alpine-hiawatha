@@ -6,6 +6,7 @@ RUN apk add --update \
     libxslt \
     zlib \
     libxml2  && \
+    apk add mbedtls  --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community/ --allow-untrusted && \
     apk add hiawatha mbedtls  --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
     rm -rf /var/cache/apk/*
 
