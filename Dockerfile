@@ -1,13 +1,13 @@
-FROM alpine:latest
+FROM alpine:edge
 MAINTAINER Mitchell Hewes <me@mitcdh.com>
 
 RUN apk add --update \
     musl \
     libxslt \
     zlib \
-    libxml2  && \
-    apk add mbedtls  --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community/ --allow-untrusted && \
-    apk add hiawatha mbedtls  --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
+    libxml2 \
+    mbedtls  && \
+    apk add hiawatha --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
     rm -rf /var/cache/apk/*
 
 # Add user and group
