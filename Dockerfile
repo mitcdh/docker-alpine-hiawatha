@@ -13,9 +13,9 @@ RUN apk add --update \
 # Add user and group
 RUN addgroup -S www-data && \
     adduser -S -G www-data -g "Web Server" -h "/www" web-srv && \
-    mkdir /scripts/pre-run/ && \
+    mkdir -p /scripts/pre-run/ && \
     chmod -R 700 /scripts/ && \
-    mkdir /etc/hiawatha/conf.d && \
+    mkdir -p /etc/hiawatha/conf.d && \
     chown web-srv:www-data /etc/hiawatha/conf.d && \
     ln -sf /dev/stdout /var/log/hiawatha/access.log && \
     ln -sf /dev/stdout /var/log/hiawatha/system.log && \
